@@ -149,12 +149,12 @@ export default function Home() {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-48 object-fit rounded-t-lg p-2"
+              className="w-full h-52 object-contain rounded-t-lg p-3"
             />
             <div className="p-4 bg-secondary/20">
-              <h2 className="text-lg font-semibold">{product.title}</h2>
-              <p className="text-muted-foreground">${product.price}</p>
-              <p className="text-muted-foreground">{product.category}</p>
+              <h2 className="text-lg font-semibold mb-1">{product.title}</h2>
+              <p className="text-muted-foreground mb-1">${product.price}</p>
+              <p className="text-muted-foreground mb-1">{product.category}</p>
             </div>
           </Link>
         ))}
