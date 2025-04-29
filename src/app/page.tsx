@@ -149,7 +149,7 @@ export default function Home() {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover rounded-t-lg"
             />
             <div className="p-4">
               <h2 className="text-lg font-semibold">{product.title}</h2>
