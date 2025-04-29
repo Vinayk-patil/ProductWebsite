@@ -15,6 +15,10 @@ export default function Home() {
   const [sortField, setSortField] = useState<SortField>('title');
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    null
+  );
+  const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -22,6 +26,12 @@ export default function Home() {
         const data = await getAllProducts();
         setProducts(data);
         setLoading(false);
+
+        // Extract unique categories from products
+        const uniqueCategories = [
+          ...new Set(data.map((product) => product.category)),
+        ];
+        setCategories(uniqueCategories);
       } catch (e: any) {
         setError(e.message);
         setLoading(false);
@@ -34,8 +44,12 @@ export default function Home() {
   useEffect(() => {
     const sortedProducts = sortProducts(products, sortField, sortOrder);
     const searchedProducts = filterProducts(sortedProducts, searchQuery);
-    setFilteredProducts(searchedProducts);
-  }, [products, sortOrder, sortField, searchQuery]);
+    const categoryFilteredProducts = filterByCategory(
+      searchedProducts,
+      selectedCategory
+    );
+    setFilteredProducts(categoryFilteredProducts);
+  }, [products, sortOrder, sortField, searchQuery, selectedCategory]);
 
   const sortProducts = (
     products: Product[],
@@ -69,6 +83,17 @@ export default function Home() {
     );
   };
 
+  const filterByCategory = (
+    products: Product[],
+    category: string | null
+  ): Product[] => {
+    if (!category) {
+      return products;
+    }
+
+    return products.filter((product) => product.category === category);
+  };
+
   const handleSortOrderChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOrder(event.target.value as SortOrder);
   };
@@ -79,6 +104,12 @@ export default function Home() {
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+  };
+
+  const handleCategoryChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedCategory(event.target.value === '' ? null : event.target.value);
   };
 
   if (loading) {
@@ -137,6 +168,25 @@ export default function Home() {
             onChange={handleSearchChange}
           />
         </div>
+
+        <div>
+          <label htmlFor="category" className="mr-2">
+            Category:
+          </label>
+          <select
+            id="category"
+            className="border p-2 rounded text-black"
+            value={selectedCategory || ''}
+            onChange={handleCategoryChange}
+          >
+            <option value="">All Categories</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -164,4 +214,3 @@ export default function Home() {
     </div>
   );
 }
-
