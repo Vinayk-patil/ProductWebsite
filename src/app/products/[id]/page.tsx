@@ -23,7 +23,7 @@ export default async function ProductDetail({params}: Props) {
   }
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="mx-4 md:mx-16 lg:mx-32 xl:mx-64 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <img
           src={product.image}

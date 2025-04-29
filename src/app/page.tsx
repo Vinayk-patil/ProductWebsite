@@ -90,7 +90,7 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="mx-4 md:mx-16 lg:mx-32 xl:mx-64 py-8">
       <h1 className="text-2xl font-bold mb-4">Products</h1>
 
       <div className="mb-4 flex flex-wrap items-center gap-4">
