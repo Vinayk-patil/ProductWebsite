@@ -144,14 +144,14 @@ export default function Home() {
           <Link
             href={`/products/${product.id}`}
             key={product.id}
-            className="block rounded-lg bg-card shadow-sm transition-shadow duration-300 hover:shadow-md"
+            className="block rounded-lg bg-card shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-lg"
           >
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-48 object-fit rounded-t-lg"
+              className="w-full h-48 object-fit rounded-t-lg p-2"
             />
-            <div className="p-4">
+            <div className="p-4 bg-secondary/20">
               <h2 className="text-lg font-semibold">{product.title}</h2>
               <p className="text-muted-foreground">${product.price}</p>
               <p className="text-muted-foreground">{product.category}</p>
