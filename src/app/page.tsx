@@ -90,7 +90,7 @@ export default function Home() {
   }
 
   return (
-    <div className="mx-4 md:mx-12 lg:mx-24 xl:mx-48 py-8">
+    <div className="mx-12 py-8">
       <h1 className="text-2xl font-bold mb-4">Products</h1>
 
       <div className="mb-4 flex flex-wrap items-center gap-4">
@@ -149,12 +149,14 @@ export default function Home() {
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-52 object-contain rounded-t-lg p-3"
+              className="w-full h-64 object-contain rounded-t-lg p-3"
             />
             <div className="p-4 bg-secondary/20">
               <h2 className="text-lg font-semibold mb-1">{product.title}</h2>
-              <p className="text-muted-foreground mb-1">${product.price}</p>
-              <p className="text-muted-foreground mb-1">{product.category}</p>
+              <div className="flex justify-between items-center">
+                <p className="text-muted-foreground mb-1">${product.price}</p>
+                <p className="text-muted-foreground mb-1">{product.category}</p>
+              </div>
             </div>
           </Link>
         ))}
