@@ -8,18 +8,18 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 94.1%; /* Light gray (#f0f0f0) */
-    --foreground: 0 0% 20%; /* Dark gray (#333) */
-    --card: 0 0% 100%;
+    --background: 220 20% 96%; /* Light Mist Gray (#F8FAFC) */
+    --foreground: 225 46% 6%; /* Dark Slate (#0F172A) */
+    --card: 0 0% 100%; /* Pure White (#FFFFFF) */
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 180 100% 25%; /* Teal (#008080) */
+    --primary: 228 78% 41%; /* Indigo Blue (#2563EB) */
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted-foreground: 223 15% 53%; /* Muted Blue Gray (#64748B) */
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
@@ -86,4 +86,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-

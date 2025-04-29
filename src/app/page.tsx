@@ -144,7 +144,7 @@ export default function Home() {
           <Link
             href={`/products/${product.id}`}
             key={product.id}
-            className="block rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            className="block rounded-lg bg-card shadow-sm transition-shadow duration-300 hover:shadow-md"
           >
             <img
               src={product.image}
@@ -153,8 +153,8 @@ export default function Home() {
             />
             <div className="p-4">
               <h2 className="text-lg font-semibold">{product.title}</h2>
-              <p className="text-gray-600">${product.price}</p>
-              <p className="text-gray-500">{product.category}</p>
+              <p className="text-muted-foreground">${product.price}</p>
+              <p className="text-muted-foreground">{product.category}</p>
             </div>
           </Link>
         ))}

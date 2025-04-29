@@ -32,9 +32,9 @@ export default async function ProductDetail({params}: Props) {
         />
         <div>
           <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
-          <p className="text-gray-600 mb-4">${product.price}</p>
-          <p className="text-gray-500 mb-4">Category: {product.category}</p>
-          <p className="text-gray-700 mb-4">{product.description}</p>
+          <p className="text-muted-foreground mb-4">${product.price}</p>
+          <p className="text-muted-foreground mb-4">Category: {product.category}</p>
+          <p className="text-foreground mb-4">{product.description}</p>
           <Link href="/" className="text-blue-500 hover:underline">
             Back to Products
           </Link>
