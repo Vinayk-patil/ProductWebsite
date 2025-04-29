@@ -26,6 +26,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <footer className="bg-background text-foreground py-4 text-center mt-8">
+          © VinayakPatil All rights reserved
+        </footer>
       </body>
     </html>
   );
