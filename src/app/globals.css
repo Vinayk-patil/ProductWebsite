@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 220 20% 96%; /* Light Mist Gray (#F8FAFC) */
+    --background: 0 0% 100%; /* Light Mist Gray (#F8FAFC) */
     --foreground: 225 46% 6%; /* Dark Slate (#0F172A) */
     --card: 0 0% 100%; /* Pure White (#FFFFFF) */
     --card-foreground: 0 0% 3.9%;
@@ -86,3 +86,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
