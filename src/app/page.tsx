@@ -100,7 +100,7 @@ export default function Home() {
           </label>
           <select
             id="sortField"
-            className="border p-2 rounded"
+            className="border p-2 rounded text-black"
             value={sortField}
             onChange={handleSortFieldChange}
           >
@@ -115,7 +115,7 @@ export default function Home() {
           </label>
           <select
             id="sortOrder"
-            className="border p-2 rounded"
+            className="border p-2 rounded text-black"
             value={sortOrder}
             onChange={handleSortOrderChange}
           >
@@ -131,7 +131,7 @@ export default function Home() {
           <input
             type="text"
             id="search"
-            className="border p-2 rounded"
+            className="border p-2 rounded text-black"
             placeholder="Search by title"
             value={searchQuery}
             onChange={handleSearchChange}
@@ -144,14 +144,14 @@ export default function Home() {
           <Link
             href={`/products/${product.id}`}
             key={product.id}
-            className="block rounded-lg bg-card shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-lg"
+            className="block rounded-lg bg-card shadow-sm transition-shadow duration-300 hover:shadow-md hover:shadow-lg border"
           >
             <img
               src={product.image}
               alt={product.title}
               className="w-full h-64 object-contain rounded-t-lg p-3"
             />
-            <div className="p-4 bg-secondary/20">
+            <div className="p-4 bg-secondary/20 text-black">
               <h2 className="text-lg font-semibold mb-1">{product.title}</h2>
               <div className="flex justify-between items-center">
                 <p className="text-muted-foreground mb-1">${product.price}</p>
@@ -164,3 +164,4 @@ export default function Home() {
     </div>
   );
 }
+
