@@ -144,7 +144,7 @@ export default function Home() {
           <Link
             href={`/products/${product.id}`}
             key={product.id}
-            className="block rounded-lg shadow-md overflow-hidden"
+            className="block rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
             <img
               src={product.image}
