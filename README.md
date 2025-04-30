@@ -13,13 +13,10 @@ A responsive product listing and detail page built using the FakeStore API. This
    git clone https://github.com/yourusername/product-listing-app.git
    cd product-listing-app
 
-   OR
-2. Live:-
-
-3. Install dependencies
+2. Install dependencies
    npm install
    
-5. Run the development server
+3. Run the development server
    npm run dev
 
 # Data Fetching Strategy
